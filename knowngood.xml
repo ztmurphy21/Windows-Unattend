@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unattend xmlns="urn:schemas-microsoft-com:unattend">
+    <settings pass="specialize">
+        <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <WindowsFeatures>
+                <ShowWindowsMail>false</ShowWindowsMail>
+                <ShowInternetExplorer>true</ShowInternetExplorer>
+            </WindowsFeatures>
+            <CopyProfile>true</CopyProfile>
+            <DisableAutoDaylightTimeSet>false</DisableAutoDaylightTimeSet>
+			<AutoLogon>
+                <Password>
+                    <Value>Password123!</Value>
+                    <PlainText>true</PlainText>
+                </Password>
+                <Username>Administrator</Username>
+                <Enabled>true</Enabled>
+                <LogonCount>5</LogonCount>
+            </AutoLogon>
+            <UserAccounts>
+                <AdministratorPassword>
+                    <Value>Password123!</Value>
+                    <PlainText>true</PlainText>
+                </AdministratorPassword>
+            </UserAccounts>
+        </component>
+    </settings>
+    <settings pass="oobeSystem">
+        <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <OOBE>
+                <HideWirelessSetupInOOBE>true</HideWirelessSetupInOOBE>
+                <HideOnlineAccountScreens>true</HideOnlineAccountScreens>
+                <SkipMachineOOBE>true</SkipMachineOOBE>
+                <SkipUserOOBE>true</SkipUserOOBE>
+                <HideOEMRegistrationScreen>true</HideOEMRegistrationScreen>
+            </OOBE>
+            <WindowsFeatures>
+                <ShowInternetExplorer>true</ShowInternetExplorer>
+                <ShowWindowsMail>false</ShowWindowsMail>
+                <ShowWindowsMediaPlayer>true</ShowWindowsMediaPlayer>
+            </WindowsFeatures>
+            <BluetoothTaskbarIconEnabled>false</BluetoothTaskbarIconEnabled>
+            <UserAccounts>
+                <AdministratorPassword>
+                    <Value>Password123</Value>
+                    <PlainText>Password123</PlainText>
+                </AdministratorPassword>
+            </UserAccounts>
+        </component>
+    </settings>
+    <cpi:offlineImage cpi:source="wim:c:/users/tester/desktop/win10/sources/install.wim#Windows 10 Pro" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
+</unattend>
