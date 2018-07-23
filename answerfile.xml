@@ -4,60 +4,51 @@
         <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <AutoLogon>
                 <Password>
-                    <Value>P@ssword</Value>
+                    <Value>Password1234!</Value>
                     <PlainText>true</PlainText>
                 </Password>
-                <Username>Administrator</Username>
                 <Enabled>true</Enabled>
-                <LogonCount>5</LogonCount>
+                <Username>Administrator</Username>
             </AutoLogon>
-            <StartTiles>
-                <PromoteOEMTiles>false</PromoteOEMTiles>
-            </StartTiles>
             <WindowsFeatures>
                 <ShowInternetExplorer>true</ShowInternetExplorer>
-                <ShowMediaCenter>false</ShowMediaCenter>
                 <ShowWindowsMail>false</ShowWindowsMail>
                 <ShowWindowsMediaPlayer>true</ShowWindowsMediaPlayer>
             </WindowsFeatures>
+            <BluetoothTaskbarIconEnabled>true</BluetoothTaskbarIconEnabled>
             <CopyProfile>true</CopyProfile>
             <DisableAutoDaylightTimeSet>false</DisableAutoDaylightTimeSet>
-        </component>
-        <component name="Microsoft-Windows-Deployment" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <FirstLogonCommands>
-			
-                <RunSynchronousCommand wcm:action="add">
-                    <Description>Set Powershell Execution Policy to Unrestricted</Description>
-					<Path>powershell.exe Set-ExecutionPolicy Unrestricted -force</Path>
-					<Order>3</Order>
-                </RunSynchronousCommand>
-				
-				<SynchronousCommand wcm:action="add">
-                    <Order>4</Order>
-                    <CommandLine>powershell.exe Import-StartLayout –LayoutPath C:\Installs\StartMenu.xml –MountPath $env:SystemDrive\</CommandLine>
-                    <Description>Start Menu</Description>
-         </SynchronousCommand>
-                    
-            </FirstLogonCommands>
+            <ShowWindowsLive>true</ShowWindowsLive>
         </component>
     </settings>
     <settings pass="oobeSystem">
         <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <FirstLogonCommands>
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>powershell.exe Import-StartLayout –LayoutPath C:\Installs\StartMenu.xml –MountPath $env:SystemDrive\</CommandLine>
+                    <RequiresUserInput>false</RequiresUserInput>
+                    <Order>1</Order>
+                </SynchronousCommand>
+            </FirstLogonCommands>
             <OOBE>
-                <HideLocalAccountScreen>true</HideLocalAccountScreen>
                 <HideEULAPage>true</HideEULAPage>
+                <HideLocalAccountScreen>true</HideLocalAccountScreen>
                 <HideOEMRegistrationScreen>true</HideOEMRegistrationScreen>
                 <HideOnlineAccountScreens>true</HideOnlineAccountScreens>
                 <HideWirelessSetupInOOBE>true</HideWirelessSetupInOOBE>
-                <SkipUserOOBE>true</SkipUserOOBE>
                 <SkipMachineOOBE>true</SkipMachineOOBE>
+                <SkipUserOOBE>true</SkipUserOOBE>
             </OOBE>
             <UserAccounts>
                 <AdministratorPassword>
-                    <Value>P@ssword</Value>
+                    <Value>Password1234!</Value>
                     <PlainText>true</PlainText>
                 </AdministratorPassword>
             </UserAccounts>
+            <WindowsFeatures>
+                <ShowInternetExplorer>true</ShowInternetExplorer>
+                <ShowWindowsMail>false</ShowWindowsMail>
+            </WindowsFeatures>
         </component>
     </settings>
     <cpi:offlineImage cpi:source="wim:c:/users/tester/desktop/win10/sources/install.wim#Windows 10 Pro" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
